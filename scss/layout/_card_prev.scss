@@ -1,0 +1,161 @@
+
+
+.card {
+  background-color: rgb(230, 230, 230);
+}
+
+
+.card section {
+  @include flex;
+    flex-flow: wrap;
+    position: absolute;
+    height: 110px;
+    width: 100%;
+    margin: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+
+    @include mq_1024  { height: 100px; }
+    @include mq_800  { height: 95px; }
+    @include mq_620  { height: 90px; }
+    @include mq_480  { 
+      position: relative;
+      height: 100%;
+      width: 40%;
+      margin-right: 0;
+      bottom: 0;
+      right: 0;
+      right: 0;
+      background-color: rgb(255, 255, 255);
+     }
+}
+  
+
+// подробнее
+.card section span {
+
+  position: absolute;
+  top: -30%;
+  right: 20px;
+  height: auto;
+  width: auto;
+  background-color: rgb(255, 255, 255, 0.3);
+  border-radius: 5px;
+  margin: auto;
+  text-align: center;
+  padding: 2% 5%;
+  opacity: 0%; 
+  transition: opacity 0.5s, top 0.5s; 
+
+  @include mq_800  {  top: 0px; }
+  @include mq_620  {  top: 0px; }
+
+
+}
+
+.shadow_on { 
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.5) ;
+  transition:  box-shadow 0.2s; 
+}
+.shadow_off { box-shadow:none ; }
+
+
+ 
+    .card section div:nth-child(2) {
+      flex: 3 1 100px;
+      padding: 8px 10px 12px;
+      height: 60%;
+      min-width: 50%;
+      @include mq_480  {
+        padding: 15px;
+        height: 30%;
+      }
+
+      }
+  
+ .card div:nth-child(1){  // блок ддля звездочек left - top 
+  margin: 10px 0 0 10px;
+  width: calc(20% + 20px);
+  max-width: 80px;
+ }
+
+      
+.card section div:nth-child(3) {   // блок для индикации красок в SKU
+ 
+    flex-flow: column;
+    padding: 10px 10px 10px 0;
+    height: 60%;
+    width: 76px;
+    // background-color: rgba(255, 20, 20, 0.3);
+    justify-content: flex-end;
+    margin-left: auto;
+
+    @include mq_480  { 
+      // display: flex;
+      width: 90px;
+      padding: 15px;
+      margin-right: calc(100% - 90px); height: 30%;
+      justify-content: flex-start;
+      margin-bottom: 10%;
+    }
+    }
+
+
+// .card section div:nth-child(3) img { 
+//     // width: 60px;
+//     // padding: 0;
+//     // margin-left: auto;
+//     // @include mq_480  { 
+//     // flex: 1;
+//     // }
+//   }
+
+.card section div:last-child {    // блок для цвета группы 
+    padding: 10px 10px;
+    height: 40%;
+    width: 100%;
+    float: right;
+    min-width: 80%;
+    p { color: $white; }
+
+    @include mq_480  { 
+      padding: 15px;
+    }
+    }
+
+.pencil section div:last-child, .lead section div:last-child {background-color: $green;}
+.marker-p section div:last-child {background-color: $yellow;}
+.marker-n section div:last-child {background-color: $nitro;}
+
+
+#econom_ { background-image: url("../img/sku/permanent_prev/econom_prev/Econom_red_1.jpg"); }
+
+
+.color_point { 
+  width: 24%;
+  height: auto;
+}
+
+
+.card {
+
+  cursor: pointer;
+  background-size: 120%;
+  background-position: 20px auto;
+  @include mq_480  { 
+    background-size: 70%; 
+    background-position: -20px 0 ;
+  }
+  transition:  all 0.5s; 
+}
+
+.card:hover {
+background-size: 130%;
+
+@include mq_480  { 
+  background-size: 80%; 
+  background-position: -20px  0 ;
+}
+}

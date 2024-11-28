@@ -1,0 +1,234 @@
+  // 12 колонок 
+  .grid_12 {
+    position: absolute;
+    width:  100%;
+    height: 500%;
+    max-width: $max_whide;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0; 
+    bottom: 0;
+    text-align: center;
+    // background-color:rgba(0, 0, 0, 0.1);
+    // border-left: 1px color(0, 0, 0, 0.5);
+    // border-right: 1px color(0, 0, 0, 0.5);
+  }
+  
+  
+  .grid_12 div {
+    position: relative;
+    z-index: 10;
+  
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background-color:alpha($color: #ff939300);
+    height: 100%;
+  }
+  
+  
+  
+  
+  .flex_block {
+    margin:  auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: padding 0.2s;
+    @include mq_down_1760 { padding: 0 20px; }
+    }
+  
+  
+  
+  
+  .ratio {     // пропорциональный контейнер
+    position: relative; 
+    width: 100%; 
+    margin: 20px auto 20px; 
+    max-width: $max_whide; 
+  }
+  
+  .ratio:before { // доп настройка пропорц. контейнера
+   content: "";
+   display: block;
+  }
+  
+  .ratio_content { // внутренний блок пропорц. контейнера
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 20px auto ;
+  }
+  
+  
+  
+  .ratio_10:before {  padding-top: 10%;  }
+  .ratio_30:before, .ratio_30-60:before { padding-top: 30%; }
+  .ratio_40:before, .ratio_40-60:before {  padding-top: 40%;  }
+  .ratio_60:before, .ratio_60-80-100:before {  padding-top: 60%;  }
+
+
+
+  
+  
+  
+  
+  .col_1 { flex: 1 1 0px; min-width: calc((100% / 12) / 1.2); 
+    
+    @include mq_1400 { min-width: calc((100% / 12) / 1.6);  }
+    @include mq_1200 { min-width: calc((100% / 12) / 1.8);  }
+    @include mq_1024 { min-width: calc((100% / 12) / 1.8);  }
+    @include mq_800  { min-width: calc((100% / 12) / 1.8);  }
+    @include mq_620  { min-width: calc((100% / 12) / 1.8);  }
+    @include mq_480  { min-width: calc((100% / 12) / 1.8);  }
+  }
+
+
+  .col_1, .col_2, .col_3, .col_4, .col_5, .col_6, .col_7, .col_8, .col_10 { 
+
+    margin: 12px 9px; background-color: rgba(0, 0, 0, 0.525);
+    @include mq_down_1760 { }
+
+    @include mq_1400 { }
+    @include mq_1200 { margin: 12px 6px; }
+    @include mq_1024 { margin: 12px 4px; }
+    @include mq_800  { margin: 12px 4px; }
+    @include mq_620  { margin: 12px 4px; }
+    @include mq_480  { margin: 12px 3px; }
+  }
+
+
+
+  .col_2  { flex: 2 1 12px;      min-width: calc((100% / 6) / 1.2); }
+  .col_3  { flex: 3 1 36px;      min-width: calc((100% / 4) / 1.2); }
+  .col_4  { flex: 4 1 54px;      min-width: calc((100% / 3) / 1.2); }
+  .col_5  { flex: 5 1 72px;      min-width: calc((100% / 2.4) / 1.2); }
+  .col_6  { flex: 6 1 90px;      min-width: calc((100% / 2) / 1.2); }
+  .col_7  { flex: 7 1 108px;     min-width: calc((100% / 1.714) / 1.2); }
+  .col_8  { flex: 8 1 126px;     min-width: calc((100% / 1.5) / 1.2); }
+  .col_9  { flex: 9 1 144px;     min-width: calc((100% / 1.3333) / 1.2); }
+  .col_10 { flex: 10 1 162px;   min-width: calc((100% / 1.2) / 1.2); }
+  
+  
+.off-on { display: none; }
+  
+  
+  @media screen and (max-width: 1400px){
+  
+  
+    .ratio_for_card_4-2-1:before, .ratio_40-60:before {  padding-top: 60%;  }
+  
+  
+    
+      // .col_2 { flex: 2 1 12px;      min-width: calc((100% / 6) / 1.6); }
+      // .col_3 { flex: 3 1 24px;      min-width: calc((100% / 4) / 1.6); }
+      // .col_4 { flex: 4 1 36px;      min-width: calc((100% / 3) / 1.6); }
+      // .col_5 { flex: 5 1 48px;      min-width: calc((100% / 2.4) / 1.6); }
+      // .col_6 { flex: 6 1 60px;      min-width: calc((100% / 2) / 1.6); }
+      // .col_7 { flex: 7 1 72px;      min-width: calc((100% / 1.714) / 1.6); }
+      // .col_8 { flex: 8 1 84px;      min-width: calc((100% / 1.5) / 1.6); }
+      // .col_9 { flex: 9 1 96px;      min-width: calc((100% / 1.3333) / 1.6); }
+      // .col_10 { flex: 10 1 108px;   min-width: calc((100% / 1.2) / 1.6); }
+      // .col_12 { flex: 1 1 120px;    min-width: calc((100% ) / 1.6); }
+  
+
+  
+    }
+  
+  
+  
+  @media screen and (max-width: 1200px){
+  
+      .ratio_for_card_3-2-1:before, .ratio_30-60:before {  padding-top: 60%;  }
+  
+      // .col_1  { min-width: calc((100% / 12) / 1.8); }
+      // .col_2  { min-width: calc((100% / 6) / 1.8); }
+      // .col_3  { min-width: calc((100% / 4) / 1.8); }
+      // .col_4  { min-width: calc((100% / 3) / 1.8); }
+      // .col_5  { min-width: calc((100% / 2.4) / 1.8); }
+      // .col_6  { min-width: calc((100% / 2) / 1.8); }
+      // .col_7  { min-width: calc((100% / 1.714) / 1.8); }
+      // .col_8  { min-width: calc((100% / 1.5) / 1.8); }
+      // .col_9  { min-width: calc((100% / 1.3333) / 1.8); }
+      // .col_10 { min-width: calc((100% / 1.2) / 1.8); }
+      // .col_12 { min-width: calc((100% ) / 1.8); }
+      
+      
+      .flex_block .off-on { display: block; }
+    
+    }
+  
+  
+  
+  @media screen and (max-width: 1024px){
+  
+  
+      .ratio_for_card_4-2-1:before, .ratio_for_card_3-2-1:before {  padding-top: 80%;  }
+      
+      // .col_1 { flex: 1 1 0px;       min-width: calc((100% / 12) / 1.8); }
+      // .col_2 { flex: 2 1 8px;       min-width: calc((100% / 6) / 1.8); }
+      // .col_3 { flex: 3 1 16px;      min-width: calc((100% / 4) / 1.8); }
+      // .col_4 { flex: 4 1 32px;      min-width: calc((100% / 3) / 1.8); }
+      // .col_5 { flex: 5 1 40px;      min-width: calc((100% / 2.4) / 1.8); }
+      // .col_6 { flex: 6 1 48px;      min-width: calc((100% / 2) / 1.8); }
+      // .col_7 { flex: 7 1 56px;      min-width: calc((100% / 1.714) / 1.8); }
+      // .col_8 { flex: 8 1 64px;      min-width: calc((100% / 1.5) / 1.8); }
+      // .col_9 { flex: 9 1 72px;      min-width: calc((100% / 1.3333) / 1.8); }
+      // .col_10 { flex: 10 1 80px;    min-width: calc((100% / 1.2) / 1.8); }
+      // .col_12 { flex: 1 1 96px;     min-width: calc((100% ) / 1.8); }
+      
+      // .card_4-2-1, .card_3-2-1,  .card_4-3-2,
+      // .col_1, .col_2, .col_3, .col_4, .col_5, 
+      // .col_6, .col_7, .col_8, .col_9, .col_10, .col_12 { 
+      //  margin: 12px 4px;
+      // }
+      
+      // .card_4-2-1, .card_3-2-1 { flex: 4 1 300px;  }
+  
+    }
+  
+  
+  
+  @media screen and (max-width: 640px){
+  
+  .ratio_60-80:before {  padding-top: 80%;  }
+  
+      // .card_4-2-1, .card_3-2-1 { flex: 4 1 220px;  }
+  
+  }
+  
+  
+  
+  
+  @media screen and (max-width: 480px){
+  
+   .ratio_for_card_3-2-1:before {  padding-top: 800px;  margin: 10px auto 20px; }
+   .ratio_for_card_4-2-1:before {  padding-top: 600px;  margin: 10px auto 20px; }
+   .ratio_60-80-100:before {  padding-top: 100%;  }
+  
+    .off-on { display: none; }
+          
+          // .col_1 { flex: 1 1 0px;       min-width: calc((100% / 12) / 1.8); }
+          // .col_2 { flex: 2 1 6px;       min-width: calc((100% / 6) / 1.8); }
+          // .col_3 { flex: 3 1 12px;      min-width: calc((100% / 4) / 1.8); }
+          // .col_4 { flex: 4 1 18px;      min-width: calc((100% / 3) / 1.8); }
+          // .col_5 { flex: 5 1 24px;      min-width: calc((100% / 2.4) / 1.8); }
+          // .col_6 { flex: 6 1 36px;      min-width: calc((100% / 2) / 1.8); }
+          // .col_7 { flex: 7 1 42px;      min-width: calc((100% / 1.714) / 1.8); }
+          // .col_8 { flex: 8 1 48px;      min-width: calc((100% / 1.5) / 1.8); }
+          // .col_9 { flex: 9 1 54px;      min-width: calc((100% / 1.3333) / 1.8); }
+          // .col_10 { flex: 10 1 60px;    min-width: calc((100% / 1.2) / 1.8); }
+          // .col_12 { flex: 1 1 64px;     min-width: calc((100% ) / 1.8); }
+          
+          // // .card_4-2-1, .card_3-2-1,  .card_4-3-2,
+          // .col_1, .col_2, .col_3, .col_4, .col_5, 
+          // .col_6, .col_7, .col_8, .col_9, .col_10, .col_12 { 
+          //  margin: 12px 3px;
+          // }
+  
+          // .card_4-2-1, .card_3-2-1 { flex: 4 1 400px; height: 190px;  }
+       
+          
+  }

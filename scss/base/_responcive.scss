@@ -1,0 +1,76 @@
+.card_wrapper {
+    position: relative;
+    height: auto;
+    margin:  auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    // background-color:rgba(0, 255, 89, 0.251);
+    max-width: $max_whide; 
+    padding: 0;
+    transition: padding 0.2s; 
+    @include flex;
+    @include mq_down_1760 { padding: 0 20px;     transition: padding 0.2s; }
+    }
+    
+  
+  .card {
+    position: relative;
+    overflow: hidden;
+    background-color: $orange_bg;
+    border-radius: 12px;
+    align-content:  flex-start; 
+    height: 500px;
+    background-size:cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    margin: 12px 9px;
+    background-color: rgba(0, 0, 0, 0.1);
+    @include flex;
+
+    @include mq_1400 { }
+    @include mq_1200 { margin: 12px 6px; }
+    @include mq_1024 { margin: 12px 4px; }
+    @include mq_800  { margin: 12px 4px; }
+    @include mq_620  { margin: 12px 4px; }
+    @include mq_480  { margin: 12px 3px;
+      
+      background-size:  calc(60% - 3px); 
+      background-position: top left;
+     }
+
+     // transition: height 0.2s;
+  }
+  
+
+
+  .card_3-2-1 { flex: 4 1 420px; 
+    @include mq_1400 { flex: 1 1 340px;   height: 440px; } 
+    @include mq_1200 { flex: 1 1 290px;   height: 380px; } 
+    @include mq_1024 { flex: 1 1 240px;   height: 320px; } 
+    @include mq_800   { flex: 1 1 240px;  height: 320px; } 
+    @include mq_620  { flex: 1 1 200px;   height: 320px; } 
+    @include mq_480  { flex: 1 1 240px;   height: 180px; } 
+  }
+
+  .card_4-3-2 {   flex: 4 3 326px;   
+    @include mq_1600 { flex: 4 1 300px;  height: 400px; }  
+    @include mq_1400 { flex: 4 1 260px;  height: 360px; }   
+    @include mq_1200 { flex: 4 1 220px;  height: 320px; }    
+    @include mq_1024 { flex: 4 1 236px;  height: 310px; }    
+    @include mq_800  { flex: 4 1 200px;  height: 300px; }   
+    @include mq_620  { flex: 4 1 200px;  height: 300px; }   
+    @include mq_480  { flex: 4 1 240px;  height: 180px;} 
+
+
+  }
+
+
+
+
+
+
+
+
+

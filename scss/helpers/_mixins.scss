@@ -1,0 +1,55 @@
+
+//медиа запросы
+
+// @mixin mq_480 {
+//     @media ( min-width: $screen-min ) and ( max-width: ($screen-mobile - 1px) ) { @content; }
+//     }
+
+@mixin mq_480 {
+    @media ( max-width: ($screen-mobile - 1px) ) { @content; }
+    }
+
+@mixin mq_620 {
+    @media ( min-width: $screen-mobile ) and ( max-width: ($screen-tablet - 1px) ) { @content; }
+    }
+    
+    @mixin mq_800 {
+    @media ( min-width: $screen-tablet ) and ( max-width: ($screen-small - 1px) ) { @content; }
+    }
+    
+    @mixin mq_1024 {
+    @media ( min-width: $screen-small ) and ( max-width: ($screen-medium - 1px) ) { @content; }
+    }
+    
+    @mixin mq_1200 {
+    @media ( min-width: $screen-medium ) and ( max-width: ($screen-large - 1px) ) { @content; }
+    }
+    
+    @mixin mq_1400 {
+    @media ( min-width: $screen-large ) and ( max-width: ($screen-base - 1px) ) { @content; }
+    }
+    @mixin mq_1600 {
+    @media ( min-width: $screen-base ) and ( max-width: ($screen-othe - 1px) ) { @content; }
+    }
+    
+    @mixin mq_1712 {
+    @media ( min-width: $screen-base ) and ( max-width: ($screen-max - 1px) ) { @content; }
+    }
+
+
+    
+@mixin mq_down_1760 {
+        @media ( max-width: $screen-extra ) { @content; }
+        }
+
+@mixin mq_up_1760 {
+        @media ( min-width: $screen-extra ) { @content; }
+       }
+
+
+    @mixin flex {
+        display: -webkit-flex;
+        display: flex;
+
+    }        
+

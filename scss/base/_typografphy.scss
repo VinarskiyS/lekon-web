@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap');
+/* font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Condensed', sans-serif; */
+
+/*  Блокировка выделения текста  */
+* {
+    user-select: none;
+    -ms-user-select: none;   /*  Для эксплорера  */
+    -moz-user-select: none;   /*  Для мозилы  */
+    -khtml-user-select: none;   /*  Для конкверора  */
+    -webkit-user-select: none;   /*  Для Сафари и Хрома  */
+   }
+
+h1, h2, h3, h4, p { 
+    font-family: 'Roboto Condensed', sans-serif; 
+    line-height: 120%;
+}
+
+h2 { font-weight: 400;  font-size: 2.4rem;   
+    @include mq_1400  { font-size: 2.2rem; }
+    @include mq_1200  { font-size: 2.1rem; }
+    @include mq_1024  { font-size: 2rem; }
+    @include mq_800   { font-size: 1.9rem; }
+    @include mq_620   { font-size: 1.9rem; }
+    @include mq_480   { font-size: 1.8rem; }
+}
+
+
+h3 { font-weight: 700;  font-size: 2rem; 
+    @include mq_1400  { font-size: 1.8rem; }
+    @include mq_1200  { font-size: 1.7rem; }
+    @include mq_1024  { font-size: 1.6rem; }
+    @include mq_800   { font-size: 1.5rem; }
+    @include mq_620   { font-size: 1.5rem; } 
+    @include mq_480   { font-size: 1.4rem; }
+}
+
+h4 { font-weight: 700;  font-size: 1.6rem; 
+    @include mq_1400  { font-size: 1.6rem; }
+    @include mq_1200  { font-size: 1.4rem; }
+    @include mq_1024  { font-size: 1.2rem; }
+    @include mq_800   { font-size: 1.1rem; }
+    @include mq_620   { font-size: 1.1rem; }
+    @include mq_480   { font-size: 1.1rem; }
+}
+
+p  { font-weight: 400;  font-size: 1rem;
+    @include mq_1400  { font-size: 1rem; }
+    @include mq_1200  { font-size: 0.9rem; }
+    @include mq_1024  { font-size: 0.8rem; }
+    @include mq_800   { font-size: 0.8rem; }
+    @include mq_620   { font-size: 0.8rem; }
+    @include mq_480   { font-size: 0.8rem; }
+}
+
+
