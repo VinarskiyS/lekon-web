@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax & json</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css_test_ajax.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" ></script>
+
+    <!-- <script src="js/ajax_3.js"></script> -->
+
+<script type ="text/javascript">
+
+$(function(){	
+
+  let card_id ="";
+  let line_id ="";
+
+//  function clickCard(callback){
+
+
+    $('.someClass').bind("click", function(event) {
+
+      // card_id = event.target.id;
+      // line_id = event.target.title;
+      // line_id = card_id.firstChild(div).atr('id');
+      // alert(card_id + '= ' + line_id);
+
+      ajax({'folder': 1});
+    });
+
+    
+  // }
+
+  clickCard();
+
+//   function dataCard(card_id, line_id){
+//     alert(card_id + ' ' + line_id);
+//   }
+
+// function queueFunc (func, callback){
+//   func(); callback();
+// }
+
+
+// queueFunc(clickCard, dataCard);
+
+
+
+
+
+
+});
+
+
+
+function ajax(data) {
+        $.ajax ({
+        url: 'ajax_test_1.php',
+        type: "POST",
+        data: data,
+        dataType: "text",
+        error: error,
+        success: success
+      });
+      }
+
+
+
+function error(){
+      alert ('ошибка при загрузке данных!');
+    }
+
+function success(result){
+      alert (result);
+    }
+
+
+
+
+    </script>
+</head>
+
+
+
+<div id = "x" class="someClass" title="line_1"> <h1 >Получить данные 1</h1> </div>
+<div id = "y" class="someClass" title="line_2"> <h1 >Получить данные 1</h1> </div>
+<div id = "z" class="someClass" title="line_3"> <h1 >Получить данные 1</h1> </div>
+
+
+
+<div id="result">
+
+</div>
+
+
+
+
+
+
+
+
+</body>
+
+
+</html>

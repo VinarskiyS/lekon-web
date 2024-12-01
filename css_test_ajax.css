@@ -1,0 +1,43 @@
+.image_dir {
+    width: 20%;
+    height: auto;
+   }
+
+
+
+   .test {
+    position: absolute;
+    background-color: black;
+    z-index: 1000;
+   }
+
+
+   .someClass{
+    position: relative;
+    width: 400px;
+    height: 60px;
+    margin: 20px auto;
+    background-color: rgba(0, 255, 255, 0.412);
+    text-align: center;
+    cursor: pointer;
+    padding-top: 15px;
+
+   }
+
+   h1 {
+    font-family: 'Roboto Condensed', sans-serif; 
+    line-height: 120%;
+    font-size: 20px;
+   }
+
+
+   #result {
+    position: relative;
+    width: 400px;
+    height: 60px;
+    margin: 20px auto;
+    border: solid 1px coral;
+   }
+
+
+ 

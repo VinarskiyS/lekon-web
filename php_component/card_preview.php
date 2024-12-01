@@ -1,7 +1,7 @@
 
 
 <article class="ratio ratio_30">
-<div class="ratio_wrap card_wrapper ">
+<div class="in_ratio">
 </div>
 </article>
 

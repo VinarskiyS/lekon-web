@@ -2,8 +2,13 @@
 
 <?php
 
+if (isset ($_POST['line_folder']) && ($_POST['folder'])) {
+ 
 
-
+  $line_folder = ($_POST['line_folder']);
+  $folder = ($_POST['folder']);
+  // $line_folder = (string)$line_folder;
+  // $folder =   (string)$folder;
 
 
 
@@ -11,7 +16,7 @@
 
 function imgOutput($line_folder, $folder) {
 
-  $path = "img/sku/$line_folder/$folder/";
+  $path = "../img/sku/$line_folder/$folder/";
 
 
 
@@ -38,35 +43,13 @@ function imgOutput($line_folder, $folder) {
 }
 
 
-$line_folder = 'marker-n';
-$folder = 'profi';
+// $line_folder = 'marker-n';
+// $folder = 'profi';
 
 
-// if (isset ($_POST['line_folder']) && ($_POST['folder'])) {
- 
-
-//   $line_folder = ($_POST['line_folder']);
-//   $folder = ($_POST['folder']);
-// }
-
-
-?>
-
-
-
-
-
-
-<div class="card_back off">
-
-
-
-
+echo <<<_END
 <div class="ratio ratio_50_160 theCard">
         <div class="but_close"> </div>
-
-
-
   <div class="in_ratio wrapper_card_block"> 
     <div class="card_block">   
       <aside>
@@ -77,16 +60,19 @@ $folder = 'profi';
            <div class="swiper-button-down"></div>
               <div class="slider-nav">
               <div class="swiper-wrapper nav-wrapper">
+_END;
 
-                      <?php   imgOutput($line_folder, $folder);     ?>
-
+imgOutput($line_folder, $folder);   
+echo <<<_END
               </div>
               </div>
               </div>
               <div class="slider-main">
                 <div class="swiper-wrapper">
+_END;
 
-                       <?php   imgOutput($line_folder, $folder);     ?>
+imgOutput($line_folder, $folder);  
+echo <<<_END
               </div>
               </div>
            </div>
@@ -107,12 +93,13 @@ $folder = 'profi';
     </div>
   </div>
 </div> 
-
-
-</div>
+_END;
 
 
 
 
+}
+
+?>
 
 

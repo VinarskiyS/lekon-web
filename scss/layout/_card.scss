@@ -48,17 +48,25 @@
 
   /* стил контейнера карты */
 
-.card_back {
+#cardCont{
   position: fixed;
-  // display: flex; 
   display: none;
   align-items: center;
   top: 0; right: 0; bottom: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(40, 40, 40, 0.622);
   z-index: 100;
+}
 
+
+.card_bg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-color: rgba(40, 40, 40, 0.622);
+  z-index: 100;
 }
 
 .theCard {
@@ -68,7 +76,6 @@
 
 }
 
-  
   
   /* стили карточки к которой будет swiper */
   
@@ -424,10 +431,13 @@
     border: 1px solid #ff6f00;
     background-color: hsla(0, 0%, 0%, 0.4);
     border-radius: 4px;
-    z-index: 120;
+    z-index: 1000;
   }
 
-
+  .but_close:hover {
+    background-color: hsla(0, 27%, 31%, 0.4);
+    transition: background-color .5s;
+  }
 
 
 
