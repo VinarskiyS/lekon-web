@@ -90,8 +90,8 @@ _END;
 
 }
 
-echo '<script src="js/swiper.js"></script>';
-echo '<script src="js/ajax_1.js"></script>';
+// echo '<script src="js/swiper.js"></script>';
+// echo '<script src="js/ajax_1.js"></script>';
 
 
 

@@ -1,6 +1,6 @@
 
 
-
+$(function(){	
 
 
 
@@ -61,4 +61,4 @@ let mySwiper = new Swiper(slider_main, {
 
 
 
-
+});
