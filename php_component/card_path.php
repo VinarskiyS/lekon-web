@@ -3,10 +3,45 @@
 if (isset ($_POST['line_folder']) && ($_POST['folder'])) {
  
 
+
+
+
+
+
+
+
+
   $line_folder = ($_POST['line_folder']);
   $folder = ($_POST['folder']);
   $line_folder = (string)$line_folder;
   $folder =   (string)$folder;
+
+
+
+
+  require_once 'db_.php';  // подключение базы: 'db_.php'
+
+  try { $pdo = new PDO($attr, $user, $pass, $opts); }
+  catch (PDOException $e)
+  {
+      throw new PDOException($e->getMessage(), (int)$e->getCode());
+  };
+
+  // $ajax_query = "SELECT * FROM `products` WHERE `group_id`='marker-n' AND `name`='profi'";
+  $ajax_query = "SELECT * FROM products WHERE group_id='$line_folder' AND name='$folder'";
+  $result = $pdo->query($ajax_query);
+
+  $row_2 = $result->fetch(PDO::FETCH_ASSOC);
+
+
+  $title = htmlspecialchars($row_2['title']);
+   $descript = htmlspecialchars($row_2['descript']);
+
+
+
+
+
+
 
 
 
@@ -82,6 +117,8 @@ echo <<<_END
         </div>
       </aside> 
       <aside> 
+      <h2>$title</h2>
+      <p>$descript</p>
       </aside>
     </div>
   </div>

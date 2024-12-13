@@ -26,7 +26,7 @@ catch (PDOException $e)
 };
 
 
-$query_sku = "SELECT `numb`, `group_id`, `name`, `attribute`, `type`, `colors`, `stars` FROM `products` ORDER BY `numb`";
+$query_sku = "SELECT numb, group_id, name, attribute, type, colors, stars FROM products ORDER BY numb";
 $result = $pdo->query($query_sku);
 
 

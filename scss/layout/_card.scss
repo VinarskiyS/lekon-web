@@ -19,8 +19,14 @@
   
   .ratio_100, .ratio_100_240::before { padding-top: 100%; }
   
-  .ratio_50_100::before { padding-top: 50%; }
-  .ratio_50_160::before { padding-top: 50%; }
+  .ratio_50_100::before { 
+    padding-top: 50%; 
+    @include mq_1200 { padding-top: 100%; }
+  }
+  .ratio_50_160::before { 
+    padding-top: 50%; 
+    @include mq_1200 { padding-top: 160%; }
+  }
   
   .in_ratio {
     position: absolute; 
@@ -90,6 +96,7 @@
     margin: 10px;
     background-color: rgba(255, 255, 255, 1);
     border-radius: 16px;
+    @include mq_1200 { flex-flow: column nowrap;  }
   }
   
   .card_block aside {
@@ -100,6 +107,22 @@
     /* background-color: rgba(255, 255, 255, 0.789); */
   }
   
+  .card_block aside:first-child {
+    @include mq_1200 {
+      flex: 3 ;
+      height: calc(58% - 10px);
+    }
+  }
+  .card_block aside:last-child {
+    @include mq_1200 {
+      flex: 2 ;
+      height: calc(42% - 10px);
+    }
+  }
+  
+
+
+
   
   /* стили для swiper в 1-ом и 2-ом слайдерах */
   
@@ -116,6 +139,14 @@
     height: 100%;
     max-width: 1712px; 
     max-height: 1712px; 
+    
+    @include mq_1200 {
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
   }
   
   .container_50 {
@@ -303,8 +334,12 @@
     position: relative;
     width: 100%;
     height: 90%;
+    @include mq_1200 { margin-left: 5%; width: 90%; }
     // background-color: rgba(216, 117, 117, 0.484); 
   }
+
+
+
 
   .slider-main{
     flex: 10;
@@ -353,6 +388,7 @@
     overflow: hidden;
     // border: 1px solid #2f2f2f65;
     border-radius: 2px;
+    @include mq_1200 { width: 70%;}
   }
 
   .slider-nav .swiper-slide img {
@@ -399,6 +435,7 @@
     background-color: hsla(0, 0%, 0%, 0.4);
     background-repeat: no-repeat;
     background-position: 50% 50%;
+    @include mq_1200 { width: calc( 60% );  }
   }
 
 
@@ -413,6 +450,7 @@
     border-radius: 0 0 4px 4px ;
     background-image: url("../img/nav/swiper-button-down.svg");
   }
+
 
 
   
@@ -455,9 +493,9 @@
 
 
 
-    .swiper-button-up,   .swiper-button-down {
-      width: calc( 60% );
-    }
+    // .swiper-button-up,   .swiper-button-down {
+    //   width: calc( 60% );
+    // }
 
 
 
@@ -465,10 +503,10 @@
 
 
 
-    .slider-nav_plus {
-      width: 90%;
-      margin-left: 5%;
-    }
+    // .slider-nav_plus {
+    //   width: 90%;
+    //   margin-left: 5%;
+    // }
 
 
 
@@ -478,41 +516,40 @@
 
 
 
-    .slider{
-      margin-left: 5%;
-      width: 90%;
+    // .slider{
+    //   margin-left: 5%;
+    //   width: 90%;
 
-    }
+    // }
 
-    .slider-nav .swiper-slide {
-      width: 70%;
-    }
-
-
+    // .slider-nav .swiper-slide {
+    //   width: 70%;
+    // }
+s
   
-  .card_block { flex-flow: column nowrap; }
+  // .card_block { flex-flow: column nowrap; }
   
-  .card_block aside:first-child {
-    flex: 3 ;
-    height: calc(58% - 10px);
-  }
-  .card_block aside:last-child { 
-    flex: 2 ;
-    height: calc(42% - 10px);
-  }
+  // .card_block aside:first-child {
+  //   flex: 3 ;
+  //   height: calc(58% - 10px);
+  // }
+  // .card_block aside:last-child { 
+  //   flex: 2 ;
+  //   height: calc(42% - 10px);
+  // }
   
   
-  .slider-container{
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
-  }
+  // .slider-container{
+  //   margin-left: auto;
+  //   margin-right: auto;
+  //   left: 0;
+  //   right: 0;
+  //   text-align: center;
+  // }
    
    .ratio_100_200::before { padding-top: 240%; } 
    .ratio_50_160::before { padding-top: 160%; }
-   .ratio_50_100::before { padding-top: 100%; }
+  //  .ratio_50_100::before { padding-top: 100%; }
   
   
   
