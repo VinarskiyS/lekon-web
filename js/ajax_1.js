@@ -20,7 +20,7 @@ $(function(){
      card_id = this.id;
      line_id = this.title;
 
-     alert(card_id + ' ' + line_id);
+    //  alert(card_id + ' ' + line_id);
      ajax({'folder': card_id, 'line_folder': line_id});
    
   });
@@ -42,9 +42,6 @@ $(function(){
         success: success,
         complete: function(){
 
-
-
-
     const slider_main = document.querySelector('.slider-main');
     const slider_nav = document.querySelector('.slider-nav');
           
@@ -56,8 +53,6 @@ $(function(){
               // loop: true,
               direction: 'vertical',
               // direction: 'horizontal',
-          
-          
           });
           
           let mySwiper = new Swiper(slider_main, {
@@ -94,12 +89,37 @@ $(function(){
           
           });
 
-           $('#cardCont').css({'display':'flex'});  
+           $('#cardCont').css({'display':'flex'});
+           $('#body').css({'overflow-y':'hidden'});
 
-           $('.but_close').on('click', function() {
+
+           function go_func(e) {
+            $('#body').css({'overflow-y':'visible'});
             $('#cardCont').css({'display':'none'}); 
-            $('#cardCont').html().remove();
-            });
+            $('#cardCont').html().remove();}
+
+           $('.but_close').on('click', go_func);
+          
+
+           $(document).click(function (e) {
+            if ($(e.target).closest(".theCard").length) {
+                // клик внутри элемента
+                return;
+            }
+            go_func();
+            // клик снаружи элемента
+            $(".theCard").fadeOut();
+        });
+
+
+
+
+          //  $('#cardCont').not('children').on('click', go_func);
+
+            // if(('#cardCont').on('mouseenter') && !(('.but_close').on('mouseenter'))){
+            //   go_func();
+            // };
+
 
         }
       });

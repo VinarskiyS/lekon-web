@@ -6,7 +6,7 @@
 //     }
 
 @mixin mq_480 {
-    @media ( max-width: ($screen-mobile - 1px) ) { @content; }
+    @media  ( max-width: ($screen-mobile - 1px) ) { @content; }
     }
 
 @mixin mq_620 {
@@ -29,7 +29,7 @@
     @media ( min-width: $screen-large ) and ( max-width: ($screen-base - 1px) ) { @content; }
     }
     @mixin mq_1600 {
-    @media ( min-width: $screen-base ) and ( max-width: ($screen-othe - 1px) ) { @content; }
+    @media ( min-width: $screen-base ) and ( max-width: ($screen-other - 1px) ) { @content; }
     }
     
     @mixin mq_1712 {
@@ -53,3 +53,9 @@
 
     }        
 
+
+
+
+    @mixin mq_to_1024 {
+        @media  ( max-width: ($screen-medium - 1px) ) { @content; }
+        }
