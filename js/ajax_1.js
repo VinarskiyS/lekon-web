@@ -58,7 +58,7 @@ $(function(){
           let mySwiper = new Swiper(slider_main, {
           
               // direction: "vertical",
-              direction: 'horizontal',
+              // direction: 'horizontal',
               spaceBetween: 5,
               pagination: {
                   el: '.swiper-pagination-card', 
@@ -86,8 +86,14 @@ $(function(){
               },
     
               observer: true,
-          
+ 
           });
+
+        //  let thumb = document.querySelectorAll('.slider-nav.swiper-slide');
+        //   thumb.forEach((el) => el.addEventListener('mouseenter', function() {
+        //     mySwiper.slideTo(el.dataset.swiperSlideIndex) }));
+
+
 
            $('#cardCont').css({'display':'flex'});
            $('#body').css({'overflow-y':'hidden'});

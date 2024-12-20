@@ -31,11 +31,6 @@
     padding-top: 50%; 
     @include mq_to_1024 { padding-top: 90%; }
   }
-
-  .ratio_60_90::before { 
-    padding-top: 60%; 
-    @include mq_to_1024 { padding-top: 90%; }
-  }
   
   .ratio_50_100::before { 
     padding-top: 50%; 
@@ -83,12 +78,11 @@
     color: $orange_bg;
 }
 
-
   /* стил контейнера карты */
 
-#cardCont{
+#cardCont_examlple{
   position: fixed;
-  display: none;
+//   display: none;
   align-items: center;
   top: 0; right: 0; bottom: 0; left: 0;
   width: 100%;
@@ -129,22 +123,21 @@
     width: calc(100% - 20px);
     height: calc(100% - 20px);
     margin: 10px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 1);
     border-radius: 16px;
     @include mq_to_1024 { flex-flow: column nowrap;  }
   }
   
   .card_block aside {
     position: relative; 
-    // flex: 1 1 calc(50% - 20px);
+    flex: 1 1 calc(50% - 20px);
     height: calc(100% - 10px);
     margin: 5px;
     background-color: rgba(255, 255, 255, 0.789);
   }
 
 
-  .card_block aside:nth-child(1) {
-    flex: 1 1 calc(50% - 20px);
+  .card_block aside:first-child {
     background-color: rgba(131, 221, 181, 0.522);
     @include mq_to_1024 {
       flex: 3 ;
@@ -152,21 +145,21 @@
       max-width: 80%; 
     }
     @include mq_to_620 {
-      flex: 3 ;
-      height: calc(60% - 10px);
+      flex: 1 ;
+      height: calc(40% - 10px);
       max-width: 90%; 
     }
 
   }
 
 
-  .card_block aside:nth-child(2) {
-  flex: 1 1 calc(30% - 20px);
+  .card_block aside:last-child {
+    // display: flex;
    padding: 60px 60px;
    @include mq_1200 { padding: 60px 30px; }
    @include mq_to_1024 { 
-    flex: 1 ; 
-    height: calc(30% - 10px); 
+    
+    flex: 1 ; height: calc(40% - 10px); 
     padding: 60px 40px;
   }
   }
@@ -185,23 +178,22 @@
 
    } 
 
-   .sku_icons {
-    // position: relative;
-    flex: 1 1 40px;
-    // top: 60px;
-    // right: 60px;
-    width: 60px;
-    height: 100%;
-    background-color: #00e7f7b8;
-    margin-right: 40px;
-    padding-top: 60px;
-  }
+.card-icons {
+  position: absolute;
+  // flex: 1;
+  right: 5%;
+  top: 7%;
+  margin-left: auto;
+  max-width: 120px;
+  min-width: 100px;
+  height: calc(58% - 10px);
+  // background-color: rgba(221, 131, 131, 0.522);
+}
 
-
-.sku_icons img {
+.card-icons img {
   width: 80%;
   height: auto;
-  margin: 5px auto;
+  margin-bottom: 10px;
 }
   
   /* стили для swiper в 1-ом и 2-ом слайдерах */
@@ -280,7 +272,43 @@
   
 
   
+  
+  
+  /* стили для стрелок в 1-ом слайдере */
+  
+  // .swiper-button-up::after, .swiper-button-down::after,
+  // .swiper-button-prev_2::after, .swiper-button-next_2::after,
+  // .swiper-button-prev::after, .swiper-button-next::after
+  // { display: none; }
+  
+  
 
+  // .swiper-button-next_2, .swiper-button-prev_2,
+  // .swiper-button-next, .swiper-button-prev {
+  // position: relative;
+  //  margin: 4% 0 4% 2% ;
+  //  top: 5%;
+  //  right: 0;
+  //  width: 30%;
+  //  height: 30%;
+  //  background-size:  15%;
+  //  background-color: hsla(0, 0%, 0%, 0.16);
+  //  background-repeat: no-repeat;
+  //  background-position: 50% 50%;
+  //  border-radius: 5px;
+  //  transition:  background-color 0.2s;
+
+  //  @include mq_to_1024 {
+
+  // }
+
+
+  // }
+  
+  
+  
+  
+  
 
   
   .swiper-button-up:hover, .swiper-button-down:hover,
@@ -369,18 +397,21 @@
   
 
 
-// ОСНОВНОЕ ИЗОБРАЖЕНИЕ В КАРТОЧКЕ
+
 
   .slider{
     margin-top: 6%;
-    margin-left: 5%;
+    margin-left: 3%;
     display: flex;
     position: relative;
-    width: 95%;
+    width: 100%;
     height: 90%;
     @include mq_to_1024 { margin-left: 5%; width: 90%; }
     // background-color: rgba(216, 117, 117, 0.484); 
   }
+
+
+
 
   .slider-main{
     flex: 10;
@@ -400,14 +431,14 @@
 
   .slider-nav-wrap{
     position: relative;
-    flex: 1 1 30px;
+    flex: 1 1 60px;
     width: 15%;
     height: 100%;
-    background-color:#ff620068;
+    background-color:#ff6f004f;
    }
 
   .slider-nav{
-    margin: 10px 10px auto 10px;
+    margin: 10px 5% auto 10px;
     overflow: hidden;
     flex-shrink: 0;
     height: 80%;
@@ -415,12 +446,12 @@
   }
   
   .slider-nav .swiper-slide {
-    width: calc(100% );
+    width: 60%;
     height: auto;
     overflow: hidden;
     border-radius: 2px;
     z-index: 120;
-    // @include mq_to_1024 { width: 70%;}
+    @include mq_to_1024 { width: 70%;}
   }
 
   .slider-nav .swiper-slide img {
@@ -452,7 +483,7 @@
   .swiper-button-up, .swiper-button-down {
     position: absolute;
     left: 0; right: 0;
-    width: 80%;
+    width: 52%;
     height: 4%;
     margin-left: 8.5%;
     background-size:  30%;
@@ -463,8 +494,8 @@
     // @include mq_to_1200 { height: 15px;}
     @include mq_to_1024 { 
       // height: 2%;
-      width: 78%; 
-      margin-left: 10%; 
+      width: 58%; 
+      margin-left: 11%; 
      }
   }
 
@@ -520,40 +551,3 @@
 
   
 
-  
-  
-  /* стили для стрелок в 1-ом слайдере */
-  
-  // .swiper-button-up::after, .swiper-button-down::after,
-  // .swiper-button-prev_2::after, .swiper-button-next_2::after,
-  // .swiper-button-prev::after, .swiper-button-next::after
-  // { display: none; }
-  
-  
-
-  // .swiper-button-next_2, .swiper-button-prev_2,
-  // .swiper-button-next, .swiper-button-prev {
-  // position: relative;
-  //  margin: 4% 0 4% 2% ;
-  //  top: 5%;
-  //  right: 0;
-  //  width: 30%;
-  //  height: 30%;
-  //  background-size:  15%;
-  //  background-color: hsla(0, 0%, 0%, 0.16);
-  //  background-repeat: no-repeat;
-  //  background-position: 50% 50%;
-  //  border-radius: 5px;
-  //  transition:  background-color 0.2s;
-
-  //  @include mq_to_1024 {
-
-  // }
-
-
-  // }
-  
-  
-  
-  
-  
