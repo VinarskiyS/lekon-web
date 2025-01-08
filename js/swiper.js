@@ -19,7 +19,6 @@ let mySwiperNav = new Swiper(slider_nav, {
     direction: 'vertical',
     // direction: 'horizontal',
 
-
 });
 
 let mySwiper = new Swiper(slider_main, {
@@ -33,7 +32,6 @@ let mySwiper = new Swiper(slider_main, {
         type: 'fraction',
         clickable: true,
     },
-
 
     effect: "fade",
     // effect: "flip",
@@ -55,7 +53,6 @@ let mySwiper = new Swiper(slider_main, {
     },
 
     observer: true,
-
 
 });
 

@@ -26,8 +26,8 @@ catch (PDOException $e)
 };
 
 
-$query_sku = "SELECT numb, group_id, name, attribute, type, colors, stars FROM products ORDER BY numb";
-$result = $pdo->query($query_sku);
+$query_preview = "SELECT numb, group_id, name, attribute, type, colors, stars FROM products ORDER BY numb";
+$result = $pdo->query($query_preview);
 
 
 
@@ -40,8 +40,7 @@ function col($var){
    };
 
 
-while ($row = $result->fetch(PDO::FETCH_ASSOC))
-{
+while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 
    $group_id = htmlspecialchars($row['group_id']);
    $name = htmlspecialchars($row['name']);
@@ -54,10 +53,8 @@ while ($row = $result->fetch(PDO::FETCH_ASSOC))
     $colors = htmlspecialchars($row['colors']); // присваиваем переменной $colors строку "colors" из базы 
     $stars = htmlspecialchars($row['stars']);
 
-
-
    switch ($name){
-    case "pencil": $prevName = 'Карандаш';
+    case "oval": $prevName = 'Карандаш';
         break;
     case "lead": $prevName = 'Грифель';  
         break;
@@ -67,7 +64,7 @@ while ($row = $result->fetch(PDO::FETCH_ASSOC))
 
 
    $colors_arr = explode(', ', "$colors");
-   $color = col($colors_arr);
+   $colors_in_line = col($colors_arr);
 
  
 
@@ -80,7 +77,7 @@ echo <<<_END
     <div> 
     <h4> $prevName </h4> 
     <p> $attribute </p> 
-    </div> <div> $color </div> <div>
+    </div> <div> $colors_in_line </div> <div>
     <p>  $type </p>  
     </div>
  </section>
@@ -95,13 +92,10 @@ _END;
 ?>
 
 
+<div class=" card card_4-3-2 card_prev_opacity "></div>
+<div class=" card card_4-3-2 card_prev_opacity "></div>
+<div class=" card card_4-3-2 card_prev_opacity "></div>
 
-
-
-
-
-
-<div class=" card card_4-3-2 "></div>
 
 
 

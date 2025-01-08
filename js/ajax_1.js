@@ -32,9 +32,6 @@ $(function(){
     function ajax(data) {
         $.ajax ({
         url: '../php_component/card_path.php',
-        // url: '../php_component/card_path.php',
-        // url: '../php_component/card_ajax.php',
-        // url: '../php_component/card_ajax.php',
         type: "POST",
         data: data,
         // dataType: "text",
@@ -67,9 +64,6 @@ $(function(){
               },
           
               effect: "fade",
-              // effect: "flip",
-              // loopSlides: 5,
-              // loop: true,
               // navigation:{
               //     prevEl: '.swiper-button-prev', 
               //     nextEl: '.swiper-button-next', 
@@ -96,7 +90,7 @@ $(function(){
 
 
            $('#cardCont').css({'display':'flex'});
-           $('#body').css({'overflow-y':'hidden'});
+           $('#body').css({'overflow-y':'hidden'}); // заморозка фона при открытой карточке
 
 
            function go_func(e) {

@@ -13,8 +13,10 @@ font-family: 'Roboto Condensed', sans-serif; */
 
 h1, h2, h3, h4, p { 
     font-family: 'Roboto Condensed', sans-serif; 
-    line-height: 120%;
+   
 }
+h1, h2, h3, h4 { line-height: 110%; }
+p { line-height: 120%; }
 
 h2 { font-weight: 400;  font-size: 2.4rem;   
     @include mq_1400  { font-size: 2.2rem; }

@@ -71,3 +71,7 @@
  @mixin mq_to_620 {
             @media  ( max-width: ($screen-tablet - 1px) ) { @content; }
             }
+
+@mixin mq_to_480 {
+             @media  ( max-width: ($screen-mobile - 1px) ) { @content; }
+                }
