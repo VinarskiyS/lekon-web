@@ -32,8 +32,8 @@ if (isset ($_POST['line_folder']) && ($_POST['folder'])) {
   $descript = htmlspecialchars($row_2['descript']);
   // $str = str_replace(',', "\r\n", $str);
 
-
-  $descript_2 = str_replace('.', ".<br><br>",  $descript); // добавление абзаца в тексте
+  $descript_1 = str_replace('. ', ".<br>",  $descript); // добавление абзаца в тексте
+  $descript_2 = str_replace('#', "<br>",  $descript_1); // добавление абзаца в тексте
 
   // setlocale(LC_ALL, "ru_RU.UTF-8");
   // $pattern = "/ [а-я] /m"; 
