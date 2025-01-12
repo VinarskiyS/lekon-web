@@ -5,7 +5,7 @@ const slider_2 = document.querySelector('.swiper-container_2');
 
 let swiper_2 = new Swiper(slider_2, {
     slidesPerView: 1, 
-    spaceBetween: 0, // расстояние между слайдами
+    spaceBetween: 10, // расстояние между слайдами
     pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
@@ -17,6 +17,8 @@ let swiper_2 = new Swiper(slider_2, {
     },
    slideToClickedSlide: true, // перекл. по клике на слайд если slidesPerView:>1
    //centeredSlides: true,
+
+   effect: "fade",
 
    loop: true,  // зацикленный слайдер
    navigation: {

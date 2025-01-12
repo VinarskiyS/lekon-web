@@ -1,4 +1,31 @@
 
+// СТИЛИ ДЛЯ БАННЕРА:
+
+.swiper-slide h2 { 
+  // font-size: 2.4rem; 
+  font-size: 2vw; 
+  position: absolute;
+  color: aliceblue;
+  margin: 5% auto auto 20%;
+  padding-left: 60px;
+  z-index: 100;
+}
+
+.swiper-slide h2 span {
+  color: $orange_bg;
+}
+
+
+
+
+
+
+
+
+
+
+
+
   //Проверка границ блоков
 //  .slider-nav-wrap,  .slider-nav_plus
 //   {  border: solid 1px rgba(221, 218, 131, 0.641); }
@@ -10,12 +37,13 @@
 
 // ОБЩИЙ БЛОК ДЛЯ ВСЕГО СЛАЙДЕРА С МИНИАТЮРАМИ
 .slider{
-    margin: 6% 0 0 0;
-
+    margin: 0;
     display: flex;
+    flex-flow: column nowrap;
     position: relative;
     width: calc(100% - 10px);  
-    height: 90%;
+    // width: 100%;  
+    height: 95%;
   }
 
 // ОБЕРТКА ДЛЯ НАВИГАЦИИ СЛАЙДЕРА
@@ -23,57 +51,19 @@
   .slider-nav-wrap{
     position: relative;
     flex: 1 1 30px;
-    width: 15%;
+    order: 2;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
     left: 0;
-    height: 90%;
-    padding: 0;
+    height: 12%;
+    padding: 2% 0;
+    // background-color: #ff6f00;
    }
 
 
 
-// СТРЕНКИ ВВЕР И ВНИЗ ДЛЯ МИНИАТЮР
 
-   .swiper-button-up, .swiper-button-down {
-    position: absolute;
-    left: 0; right: 0;
-    width: 80%;
-    height: 4%;
-    margin-left: 10%;
-    background-size:  30%;
-    background-color: hsla(0, 0%, 0%, 0.4);
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    // z-index: 120;
-    // @include mq_to_1200 { height: 15px;}
-    @include mq_to_1024 { 
-      // height: 2%;
-    //   width: 78%; 
-    //   margin-left: 10%; 
-     }
-  }
-
-
-
-  .swiper-button-up { 
-    top: -6%; 
-    border-radius: 4px 4px 0 0 ;
-    background-image: url("../img/nav/swiper-button-up.svg");
-    // @include mq_to_1200 { top: -2%; }
-  }
-  .swiper-button-down { 
-    top: 102%; 
-    // top: calc(90% - 20px); 
-    // top: calc(80% + 5px); 
-    border-radius: 0 0 4px 4px ;
-    background-image: url("../img/nav/swiper-button-down.svg");
-    // @include mq_to_1024 {   top: calc(85%);   }
-  }
-
-  .swiper-button-up:hover, .swiper-button-down:hover,
-  .swiper-button-next_2:hover, .swiper-button-prev_2:hover, 
-  .swiper-button-next:hover, .swiper-button-prev:hover {
-    background-color: hsla(0, 0%, 0%, 0.3);
-   }
 
 
 
@@ -81,6 +71,9 @@
 // СТИЛИ ДЛЯ НАВИГАЦИИ (МИНИАТЮРЫ)
 
 .slider-nav{
+    flex: 8 1 80%;
+    order: 1;
+
     margin: 0 10px auto 10px;
     overflow: hidden;
     flex-shrink: 0;
@@ -119,6 +112,7 @@
     }
 
     
+
 .slider-container {
     position: absolute; 
     width: 100%; 
@@ -126,23 +120,12 @@
     max-width: 1712px; 
     max-height: 1712px; 
     // background-color: #ff6f003f; 
+    // @include mq_to_480 { width: 150%;   overflow-x: visible; }
   }
 
   /* стили для слайдера с привьюшками */
 
-    .slider-nav_plus {
-        position: relative;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        width: 20%;
-        margin: 0 30px 0 auto;
-        height: 40px;
-        // background-color: rgba(255, 255, 255, 0.456);
-        bottom: 18%;
-        z-index: 50;
-        // @include mq_to_1024 {  height: calc(3%); }
-      }
+
 
       .card_zag {    /* заголовок */
         font-size: 1.5em;
@@ -173,12 +156,6 @@
 
 
 
-
-
-
-
-
-
 .swiper-slide-visible {
     opacity: 0.5;
     transition: opacity 0.6s;
@@ -193,21 +170,9 @@
   // transition: 0.6s;
 }
 
-
 .swiper-card img {
     width: 100%;
   }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -227,27 +192,45 @@
 
 
 
+  /* стили для счетчика слайдера с привьюшками */
 
-  /* стили для навигации слайдера с привьюшками */
+  .slider-nav_plus {
+    position: absolute;
+    bottom: calc(30% + 15px); right: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 10%;
+    // margin: 0 30px 15% auto;
+    height: 40px;
+    // background-color: rgba(255, 255, 255, 0.456);
+    bottom: 18%;
+    z-index: 50;
+    // @include mq_to_1024 {  height: calc(3%); }
+  }
+
+
   .swiper-pagination-card {
     display: flex;
-    width: 20%;
-    height: 40px;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 30px;
     font-family: 'Roboto Condensed', sans-serif; 
     line-height: 100%;
-    font-size: 12px;
-    // border: 1px solid rgba(102, 102, 102, 0.5);
+    font-size: 14px;
+    border: 1px solid rgba(102, 102, 102, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
   }
 
 
   // TOTAL
   .swiper-pagination-current,  .swiper-pagination-total {
-    height: 25px;
-    padding: 6px 6px;
-    margin: -6px 6px 6px;
-    border: 1px solid rgba(102, 102, 102, 0.5);
-    border-radius: 5px;
-    @include mq_to_800 {  padding: 4px 6px;  margin: -2px 6px 4px; }
+    height: 20px;
+    padding: 3px 2px;
+    margin: 2px;
+    // @include mq_to_800 {  padding: 4px 6px;  margin: -2px 6px 4px; }
   }
 
 
@@ -279,14 +262,46 @@
     background-color: rgb(11, 129, 13);
   }
  
+
+
+   // СТРЕЛКИ ВВЕРХ И ВНИЗ ДЛЯ МИНИАТЮР
+   // СТРЕЛКИ ВЛЕВО И ВПРАВО ДЛЯ МИНИАТЮР
   
 
-  
-
-  .swiper-button-prev, .swiper-button-prev_2{
-  background-image: url("../img/nav/swiper-button-prev.svg");
+  .swiper-btn-prev, .swiper-button-prev_2{
+  background-image: url("../img/nav/swiper-btn-prev.svg");
    }
 
-  .swiper-button-next, .swiper-button-next_2 {
-    background-image: url("../img/nav/swiper-button-next.svg");
+  .swiper-btn-next, .swiper-button-next_2 {
+    background-image: url("../img/nav/swiper-btn-next.svg");
    }
+
+
+
+
+
+
+  //  .swiper-button-up, .swiper-button-down 
+   .swiper-btn-prev,  .swiper-btn-next
+   {
+    flex: 1 1 20px;
+    order: 2;
+    width: calc(6% - 2px);
+    margin-left: 1px;
+    height: 100%;
+    background-size:  30%;
+    background-color: hsla(0, 0%, 0%, 0.4);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+
+
+
+  .swiper-button-up { background-image: url("../img/nav/swiper-button-up.svg"); }
+  .swiper-button-down { background-image: url("../img/nav/swiper-button-down.svg"); }
+
+  .swiper-btn-prev:hover,  .swiper-btn-next:hover
+  // .swiper-button-up:hover, .swiper-button-down:hover,
+  // .swiper-button-next_2:hover, .swiper-button-prev_2:hover, 
+  // .swiper-button-next:hover, .swiper-button-prev:hover 
+  { background-color: hsla(0, 0%, 0%, 0.3); }

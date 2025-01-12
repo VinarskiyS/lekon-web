@@ -78,34 +78,44 @@ function imgOutput($arg_1, $arg_2, $elOpen, $elClose) {
 
 
 
+ 
 
 
+<div class="ratio ratio_CARD theCard"> 
 
-<div class="ratio ratio_54_60_85_120_130_180 theCard">    <div class="but_close"> </div>
+          <div class="cl-btn-card cl-btn">
+            <div>
+            <div class="leftright"></div>
+            <div class="rightleft"></div>
+            </div>
+          </div>
+
   <div class="in_ratio wrapper_card_block"> 
     <div class="card_block">   
       
 
     <aside>
-    <div class="ratio ratio_90 ">
+    <div class="ratio ratio_110">
         <div class="slider-container in_ratio" >
            <div class="slider">
-           <div class="slider-nav-wrap">
-           <div class="swiper-button-up"></div>
-           <div class="swiper-button-down"></div>
-              <div class="slider-nav">
+           <div class="slider-nav-wrap off_480">
+            
+              <div class="swiper-btn-prev off_480"></div>
+              <div class="swiper-btn-next off_480"></div>
+
+              <div class="slider-nav off_480">
               <div class="swiper-wrapper nav-wrapper">
                           <?php imgOutput($line_folder, $folder,   $sliderOpen, $sliderClose);  ?>
               </div>
               </div>
-              </div>
+            </div>
               <div class="slider-main">
                 <div class="swiper-wrapper">
                 <?php imgOutput($line_folder, $folder,   $sliderOpen, $sliderClose);  ?>
               </div>
               </div>
            </div>
-           <div class="slider-nav_plus">
+           <div class="slider-nav_plus  off_480">
               <!-- <h4 class="card_zag">  </h4> -->
               <div class="swiper-pagination-card"></div>  
             </div>

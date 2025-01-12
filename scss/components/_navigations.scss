@@ -1,0 +1,55 @@
+.cl-btn {
+
+    width: 36px;
+    height: 36px;
+    border: 2px solid $red;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 18px;
+    transition: background-color .5s;
+    @include mq_to_1024 {
+    top: 24px;
+    right: 24px;
+    width: 30px; 
+    height: 30px;
+    }
+}
+
+.cl-btn:hover {
+    background-color: $red;
+    // transition: background-color .5s;
+}
+
+.cl-btn div {
+    position: absolute;
+	cursor: pointer;
+	height: 100%;
+	width: 100%;
+}
+.cl-btn .leftright, .cl-btn .rightleft {
+	height: 2px;
+	width: 80%;
+	position: absolute;
+	top: calc(50% - 1px);
+    margin: auto;
+    left: 10%;
+	background-color: $red;
+	border-radius: 1px;
+	transition: all .2s ease-in;
+}
+
+
+
+.cl-btn .leftright {transform: rotate(45deg); }
+.cl-btn .rightleft {transform: rotate(-45deg); }
+
+.cl-btn div:hover .leftright {
+	transform: rotate(-45deg);
+	background-color: $white;
+}
+.cl-btn div:hover .rightleft {
+	transform: rotate(45deg);
+	background-color: $white;
+}
+.cl-btn div:hover .close-btn {
+	opacity: 1;
+}

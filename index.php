@@ -15,8 +15,12 @@
 
 <body id='body'>
 
+<?php require_once "php_component/header.php"; ?> 
+
+
+
 <!-- <div id="cardCont_examlple"></div> -->
-<div id="cardCont"></div>
+<div id="cardCont" ></div> 
 
 <?php 
 // require_once "php_component/card_path.php"; 

@@ -55,6 +55,16 @@
 
 
 
+    @mixin mq_to_1712 {
+        @media  ( max-width: ($screen-max - 1px) ) { @content; }
+        }
+
+
+    @mixin mq_to_1400 {
+        @media  ( max-width: ($screen-base - 1px) ) { @content; }
+        }
+
+
     @mixin mq_to_1200 {
         @media  ( max-width: ($screen-large - 1px) ) { @content; }
         }

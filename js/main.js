@@ -10,6 +10,45 @@ $(function(){
 
 
 
+
+  $(document).ready(function(){
+    let header = $('.header_h1');
+    // let headDescriptor = $('.head_descriptor').css('opacity');
+    let logo = $('.logo_h1');
+        scrollPrev = 0;
+    
+    $(window).scroll(function() {
+      var scrolled = $(window).scrollTop();
+     
+      if ( scrolled > 60 ) {
+        header.addClass('header_h2');
+        // headNav.addClass('nav_w');
+        $('.head_descriptor').css('opacity', '0%');
+        $('header li').css('height', '64%');
+        logo.addClass('logo_h2');
+  
+      } else {
+        header.removeClass('header_h2');
+        $('.head_descriptor').css('opacity', '64%');
+        $('header li').css('height', '56%');
+        logo.removeClass('logo_h2');
+      }
+      scrollPrev = scrolled;
+    });
+  });	
+
+
+
+
+
+
+
+
+
+
+
+
+
 // свойста для превьюшек карт
 
 $('.card').on('mouseover mousemove', function() {

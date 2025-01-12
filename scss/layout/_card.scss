@@ -18,7 +18,12 @@
   .ratio_50::before { padding-top: 50%; }
   .ratio_80::before { padding-top: 100%; }
   .ratio_90::before { padding-top: 90%; }
+  // .ratio_96::before { padding-top: 96%; }
+
   .ratio_100::before { padding-top: 100%; }
+  .ratio_110::before { padding-top: 110%; }
+  .ratio_115::before { padding-top: 115%; }
+  .ratio_120::before { padding-top: 120%; }
 
   .ratio_100_240::before { 
     padding-top: 100%; 
@@ -48,21 +53,49 @@
     @include mq_to_1024 { padding-top: 160%; }
   }
 
-  .ratio_50_60_100_160::before { 
-    padding-top: 50%; 
-    @include mq_1200 { padding-top: 60%; }
-    @include mq_to_1024 { padding-top: 100%; }
-    @include mq_to_620 { padding-top: 160%; }
+  // .ratio_50_60_100_160::before { 
+  //   padding-top: 50%; 
+  //   @include mq_1200 { padding-top: 60%; }
+  //   @include mq_to_1024 { padding-top: 100%; }
+  //   @include mq_to_620 { padding-top: 160%; }
+  // }
+
+  // .ratio_54_60_85_120_130_180::before { 
+  //   padding-top: 54%; 
+  //   @include mq_1200 { padding-top: 60%; }
+  //   @include mq_to_1024 { padding-top: 85%; }
+  //   @include mq_to_800 { padding-top: 120%; }
+  //   @include mq_to_620 { padding-top: 130%; }
+  //   @include mq_to_480 { padding-top: 180%; }
+  // }
+
+
+/////// этот вар
+  // .ratio_54_60_85_120_150_180::before { 
+  //   padding-top: calc(54% + 20px); 
+  //   @include mq_1200 { padding-top: calc(60% + 20px) }
+  //   @include mq_to_1024 { padding-top: 85%; }
+  //   @include mq_to_800 { padding-top: 120%; }
+  //   @include mq_to_620 { padding-top: 150%; }
+  //   @include mq_to_480 { padding-top: 180%; }
+  // }
+
+
+/////// RATIO_CARD
+
+  .ratio_CARD::before { 
+    // padding-top: calc(10% + 600px); 
+    padding-top: 860px; 
+    @include mq_to_1400  { padding-top: calc(50% + 160px) }
+    // @include mq_1200 { padding-top: calc(10% + 600px) }
+    @include mq_to_1024 { padding-top: calc(10% + 730px);  }
+    @include mq_to_800 { padding-top: calc(40% + 640px);  }
+    @include mq_to_620 { padding-top: calc(40% + 700px);  }
+    @include mq_to_480 { padding-top: calc(30% + 600px); }
+    transition: padding-top 0.1s;
   }
 
-  .ratio_54_60_85_120_130_180::before { 
-    padding-top: 54%; 
-    @include mq_1200 { padding-top: 60%; }
-    @include mq_to_1024 { padding-top: 85%; }
-    @include mq_to_800 { padding-top: 120%; }
-    @include mq_to_620 { padding-top: 130%; }
-    @include mq_to_480 { padding-top: 180%; }
-  }
+
 
   .ratio_50_50_100_160::before { 
     padding-top: 50%; 
@@ -72,6 +105,12 @@
   }
 
 
+ .off_1200 {  @include mq_1200    {display: none; }}
+ .off_1024 {  @include mq_to_1024 {display: none; }}
+ .off_800  {  @include mq_to_800  {display: none; }}
+ .off_620  {  @include mq_to_620  {display: none; }}
+ .off_480  {  @include mq_to_480  {display: none; }}
+
   .in_ratio {
     position: absolute; 
     top: 0;
@@ -80,20 +119,6 @@
   }
   
   
-  .swiper-slide h2 { 
-    // font-size: 2.4rem; 
-    font-size: 2vw; 
-    position: absolute;
-    color: aliceblue;
-    margin: 5% auto auto 20%;
-    padding-left: 60px;
-    z-index: 100;
-}
-
-.swiper-slide h2 span {
-    color: $orange_bg;
-}
-
 
   /* стил контейнера карты */
 
@@ -105,11 +130,12 @@
   width: 100%;
   height: 100%;
   min-width: $min_whide;
-  background-color: rgba(40, 40, 40, 0.622);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 100;
   overflow-y:hidden;
   overflow:scroll;
-}
+
+  }
 
 
 .card_bg{
@@ -125,8 +151,19 @@
   position: relative;
   // top: 0; right: 0; bottom: 0; left: 0;
   margin: auto;
+  top: 50px;
+  overflow: hidden;
+  // @include mq_to_1712 {  max-width: 1400px; }
+  @include mq_to_1024 {  margin: auto }
+  @include mq_to_480 {   background-color: $white;}
 
 }
+// .wrapper_card_block {
+//   overflow: hidden;
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+// }
 
   
   /* стили карточки к которой будет swiper */
@@ -137,21 +174,26 @@
     position: relative; 
     display: flex;
     flex-flow: row wrap;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
     width: calc(100% - 20px);
     height: calc(100% - 20px);
     margin: 10px;
     padding:  0 30px ;
-    background-color: rgb(255, 255, 255);
-    border-radius: 25px;
+    overflow: hidden;
+
     // @include mq_to_1024 { flex-flow: column nowrap;  }
     @include mq_to_1024 {   
-      flex-flow: row wrap; 
-      justify-content: space-between; 
+      // flex-flow: row wrap; 
+      align-content: flex-start;
       padding: 0 25px ;
     }
 
-    @include mq_to_620 { padding: 0 20px ; }
-    @include mq_to_480 { padding: 20px 10px 10px; }
+    @include mq_to_620 { 
+      // align-content: flex-start;
+      padding: 0 20px ; 
+    }
+    @include mq_to_480 { padding: 0 10px 10px; }
   }
   
 
@@ -167,90 +209,132 @@
 
   .card_block aside:nth-child(1) {
     flex: 1 1 calc(48% - 20px);
-    max-width: 48%; 
-
-    
+    padding-top: 20px;
+    max-width: 680px;  
+    // max-height: 300px;
     @include mq_to_1024 {
-      flex: 3 1 600px ;
+      flex: 2 1 400px ;
       order: 1;
-      height: 65%;
-      max-width: 60%; 
-      // min-width: 500px;
+      height: auto;
+      max-width: 500px; 
+      // min-width: 300px; ///////
+      margin-bottom: -20px;
     }
     @include mq_to_800 {
+      height: auto;
       max-width: 80%; 
       min-width: 280px;
      }
     @include mq_to_620 {
       // height: calc(70% - 10px);
+      // height: 60%;
       max-width: 110%; 
       margin-top: 10px;
     }
     @include mq_to_480 {
+      // height: 54%;
       // height: calc(55% - 10px);
     }
 
   }
 
-  Проверка границ блоков
-  .card_block aside:nth-child(1), .card_block aside:nth-child(2), 
-  .sku-icons, .card-text, .atributs {  
-    border: solid 1px rgba(221, 218, 131, 0.641); }
+  // Проверка границ блоков
+
+  // .card_block aside:nth-child(1), .card_block aside:nth-child(2), 
+  // .sku-icons, .card-text, .atributs {  
+  //   border: solid 1px rgba(221, 218, 131, 0.641); }
 
 
 // блок с описанием 
 
   .card_block aside:nth-child(2) {
-   display: flex;
-   flex-flow: column nowrap;
    flex: 3 1 calc(30% - 20px);
    order: 2;
-   padding: 60px 60px;
-   min-width: 400px;
+  //  background-color: aqua;
+   display: flex;
+   flex-flow: column nowrap;
+   height: auto;
+   padding: 60px 40px;
+   min-width: 380px;
    max-width: 500px;
-   @include mq_1200 { padding: 60px 30px; }
+   @include mq_1200 { padding: 50px 30px; }
    @include mq_to_1024 { 
-    flex: 2 ; 
-    flex-flow: row wrap; 
-    order: 3;
-    justify-content: space-between;
-    height: calc(30% - 10px); 
-    padding: 0 ;
-    max-width: 100%;
+    flex: 2 1 200px;
+    order: 2; 
+    flex-flow: column nowrap; 
+    // align-items: flex-end;
+    justify-content: flex-end;
+    margin-left: auto;
+    // height: calc(30% - 10px); 
+    // height: calc(30% - 10px); 
+    padding: 50px 10px 0 20px;
+    min-width: 100px;
+    max-width: 300px;
+    // max-width: 490px;
   }
-  @include mq_to_620 { min-width: 300px; }
+  @include mq_to_800 { 
+    flex-flow: row wrap; 
+    justify-content: space-between;
+    order: 3; 
+    min-width: 260px;  
+    padding: 10px;
+    border-top: solid 1px rgba(0, 0, 0, 0.4);
+    max-width: 100%; 
+  }
+  @include mq_to_620 { 
+    min-width: 300px; 
+  }
 }
-
-  .card_block aside .card-text, .atributs{
-    flex: 3 ;
+.card-text {
+  @include mq_to_1024 {  width: 100%;  } ///////
+  @include mq_to_800 {  
+    min-width: 200px;
+     max-width: 400px; 
+     padding-right: 10px ;
+    //  padding-top: 10px;
+   } 
+}
+  .card-text,  .atributs {
+    flex: 1 ;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
     // max-width: 500px;
-    margin: -10px 5% 0 0px;
+    // margin: 0px 5% 0 0px;
     // border: solid 1px rgba(251, 162, 114, 0.641);
-    @include mq_to_1024 {  margin: 0 10px;  }
+    @include mq_to_1024 {   flex: 3 ; margin: 0;  }
+
+
    }
 
    .atributs{
     flex: 2 ;
     width: 100%;
-    // max-width: 320px;
-    height: 200px;
-    margin: 0 auto 0 0;
-    @include mq_to_1024 {margin: 0 0 0 auto; }
-    @include mq_to_620 { display: none; }
+    // margin: 0 auto 0 0;
+    // @include mq_to_1024 {margin: 0 0 0 auto;  }
+    @include mq_to_480 { display: none; }
    }
+
    .card_table{
+
+    position:absolute;
     border-collapse: collapse; 
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    @include mq_to_800 { right: 0 ;}
   }
   .card_table th, .card_table td{
   min-width: 50px; 
   // width: 50px;
   text-align: center;
   width: auto;
-  padding: 2px 10px;
+  padding: 2px 5px;
   height: auto;
   // border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  @include mq_to_800 { 
+    right: 0;
+    border-top: none;
+  }
+  @include mq_to_620 { padding: 1px 5px; }
  
   }
 
@@ -267,25 +351,37 @@
    } 
 
    .sku-icons {
-    // position: relative;
+    position: relative;
     flex: 1 1 100px;
     order: 3;
-    // top: 10px;
-    // right: 60px;
-    max-width: 100px;
-    height: 80%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    max-width: 110px;
+    // height: 100%;
     padding: 50px 5px 0 5px;
-    text-align: center;
     margin-left: auto;
-
+    // background-color: aqua;
     @include mq_to_1024 {
-      flex: 3 1 80;  
-      order: 2;
-      height: 60%;
+      // align-self: start;
+      // flex: 3 1 100%;
+      flex: 2 1 400px ;
+      justify-content: flex-start;
+      align-content: flex-start;
+      margin-left: 0;
+      // margin-top: 20px;
+      max-width: 400px; 
+      order: 3;
+      height: 15%;
     }
-    @include mq_to_800 {  
+    @include mq_to_800 { 
+      flex: 3 1 80; 
       order: 2;
-      max-width: 80px;
+      max-width: 90px;
+      height: auto;
+      margin-top: 0;
+      margin-left: auto;
     }
     @include mq_to_620 {  
      display: none;
@@ -294,15 +390,23 @@
 
 
 .icons {
+  flex: 1;
+  // flex-wrap: nowrap;
+  // align-items: flex-start;
   width: 100%;
-  height: auto;
-  margin-bottom: 5px;
+  max-width: 100px;
+  // height: auto;
+  margin: 3px;
+  // margin-right: auto;
+  // text-align: left;
+  @include mq_to_1024 { max-width: 80px; }
+  @include mq_to_800 { max-width: 100%;   margin-bottom: 6px; }
 }
   
   /* стили для swiper в 1-ом и 2-ом слайдерах */
   
   
-  .offset-top_60{ margin-top: 60px; }
+
   // .offset-top_120{ margin-top: 120px; }
   
   
@@ -336,27 +440,16 @@
 
 
 
-  .but_close {
+  .cl-btn-card {
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 36px;
-    height: 36px;
-    border: 2px solid rgba(218, 52, 10, 0.5);
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 18px;
     z-index: 1000;
-    @include mq_to_1024 {
-      top: 24px;
-      right: 24px;
-      width: 30px; 
-      height: 30px;
-     }
+
   }
 
-  .but_close:hover {
-    background-color: rgb(218, 52, 10);
-    transition: background-color .5s;
+  .cl-btn-card:hover {
+
   }
 
 

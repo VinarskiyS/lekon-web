@@ -39,6 +39,8 @@ $(function(){
         success: success,
         complete: function(){
 
+
+// Slider IN CARD
     const slider_main = document.querySelector('.slider-main');
     const slider_nav = document.querySelector('.slider-nav');
           
@@ -48,12 +50,21 @@ $(function(){
               // loopSlides: 5,
               // freeMode: true,
               // loop: true,
-              direction: 'vertical',
-              // direction: 'horizontal',
+              // direction: 'vertical',
+              direction: 'horizontal',
           });
           
           let mySwiper = new Swiper(slider_main, {
           
+            brakpoints: {
+              480: {
+                slidesPerView: 1.3,
+                spaceBetween: 5,
+              }
+            },
+
+
+
               // direction: "vertical",
               // direction: 'horizontal',
               spaceBetween: 5,
@@ -63,15 +74,15 @@ $(function(){
                   clickable: true,
               },
           
-              effect: "fade",
+              // effect: "fade",
               // navigation:{
               //     prevEl: '.swiper-button-prev', 
               //     nextEl: '.swiper-button-next', 
               // },
           
               navigation:{
-                  prevEl: '.swiper-button-up',
-                  nextEl: '.swiper-button-down',
+                  prevEl: '.swiper-btn-prev',
+                  nextEl: '.swiper-btn-next',
               },
           
               crossFade: true,
@@ -81,6 +92,11 @@ $(function(){
     
               observer: true,
  
+         
+
+
+
+
           });
 
         //  let thumb = document.querySelectorAll('.slider-nav.swiper-slide');
@@ -88,17 +104,19 @@ $(function(){
         //     mySwiper.slideTo(el.dataset.swiperSlideIndex) }));
 
 
-
+          //  $('#body').toggleClass('blur');
            $('#cardCont').css({'display':'flex'});
            $('#body').css({'overflow-y':'hidden'}); // заморозка фона при открытой карточке
-
+          
 
            function go_func(e) {
             $('#body').css({'overflow-y':'visible'});
             $('#cardCont').css({'display':'none'}); 
-            $('#cardCont').html().remove();}
+            $('#cardCont').html().remove();
 
-           $('.but_close').on('click', go_func);
+          }
+
+           $('.cl-btn-card').on('click', go_func);
           
 
            $(document).click(function (e) {
